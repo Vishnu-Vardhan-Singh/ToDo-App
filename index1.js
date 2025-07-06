@@ -8,8 +8,7 @@ let min = document.getElementsByClassName('min')
 let radios = document.getElementsByClassName('task1 radio');
 
 let count = 0
-radios[0].checked = false
-console.log(radios[2].checked)
+
 
 addbtn.addEventListener('click', () => {
 
