@@ -1,4 +1,3 @@
-let demo
 let addbtn = document.querySelector('.addBtn')
 let delbtn = document.querySelector('.delBtn')
 let bar = document.getElementsByTagName('progress')
