@@ -35,12 +35,5 @@ max[0].innerHTML = bar[0].max
 min[0].innerHTML = bar[0].value
 
 
-
-
-
-
-
-
-
 console.log(container2.lastElementChild)
 console.log(container3.length)
