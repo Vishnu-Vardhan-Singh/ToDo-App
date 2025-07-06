@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    font-family: 'poppins', system-ui;
+    text-align: center;
+    margin: 0%;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+p {
+    font-size: 8px;
+    color: brown;
+}
+
+progress {
+    height: 20px;
+    min-width: 80%;
+    max-width: 80%;
+}
+
+.container3 {
+    background-color: antiquewhite;
+    height: 50px;
+    width: 95%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.136);
+    margin-inline: 10px;
+}
+
+/* input[type="radio"]{
+    appearance: none;
+} */
+
+input[class="task1 radio"] {
+    cursor: pointer;
+    margin: 10px;
+    /* margin: 0%;
+    padding: 0%; */
+}
+
+input[type="text"] {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    fill: none;
+    font-family: inherit;
+    text-align: left;
+    font-size: 12px;
+    width: 100%;
+    margin-right: 5%;
+    outline: none;
+}
+
+input::placeholder {
+    font-size: 12px;
+    text-align: left;
+}
+
+.addDel {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10%;
+    padding-block: 1%;
+    margin-bottom: 2%;
+    gap:10px
+}
+
+.addBtn,
+.delBtn {
+    background-color: rgb(154, 202, 203);
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    font-weight: bolder;
+    position: relative;
+    transform: scale(1);
+    transition: width height transform 1ms;
+}
+
+.vertical,
+.horizontal {
+    position: absolute;
+    display: inline-block;
+    height: 24px;
+    width: 5px;
+    background-color: black;
+    border-radius: 5px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: width height 1ms;
+}
+
+.horizontal {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.addBtn:hover,
+.delBtn:hover {
+    cursor: pointer;
+}
+.addBtn:active,
+.delBtn:active {
+    transform: scale(0.9);
+}
+
+.max::before{
+    content: 'Max ';
+}
+.min::after{
+    content: ' Min';
+}
