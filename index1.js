@@ -2,9 +2,25 @@ let container2 = document.querySelector(".container2");
 let adbtn = document.querySelector(".addBtn");
 let dlbtn = document.querySelector(".delBtn");
 let progress = document.querySelector("progress");
+let maxLength;
+let count = 0;
+function updatemax() {
+  maxLength = container2.getElementsByClassName("container3");
+  progress.max = maxLength.length;
+}
+function updatevalue(checkbox) {
+  checkbox.addEventListener("click", function () {
+    if (checkbox.checked == true) {
+      count = count + 1;
+      progress.value = count;
+    } else {
+      count = count - 1;
+      progress.value = count;
+    }
+  });
+}
 
 adbtn.addEventListener("click", () => {
-    console.log('working')
   let div = document.createElement("div");
   div.classList.add("container3");
   container2.append(div);
@@ -22,9 +38,19 @@ adbtn.addEventListener("click", () => {
 
   div.append(checkbox);
   div.append(text);
+
+  updatemax();
+  updatevalue(checkbox);
 });
 
-//    <!-- <div class="container3">
-//                 <input type="checkbox" class="task1 checkbox">
-//                 <input type="text" placeholder="Add Task..." class='input' title="" value=''>
-//             </div> -->
+dlbtn.addEventListener("click", () => {
+  if (container2.lastElementChild.firstElementChild.checked == true) {
+    count = count - 1;
+    progress.value = count;
+  }
+  if (container2.lastElementChild.classList.contains("container3")) {
+    container2.lastElementChild.remove();
+  }
+  updatemax();
+});
+

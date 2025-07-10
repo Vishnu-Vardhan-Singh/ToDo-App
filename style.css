@@ -129,10 +129,3 @@ input::placeholder {
 .delBtn:active {
     transform: scale(0.9);
 }
-
-.max::before{
-    content: 'Max ';
-}
-.min::after{
-    content: ' Min';
-}
