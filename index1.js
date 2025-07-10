@@ -1,66 +1,30 @@
-let addbtn = document.querySelector('.addBtn')
-let delbtn = document.querySelector('.delBtn')
-let bar = document.getElementsByTagName('progress')
-let container3 = document.getElementsByClassName('container3')
-let container2 = document.querySelector(".container2")
-let max = document.getElementsByClassName('max')
-let min = document.getElementsByClassName('min')
-let radios = document.getElementsByClassName('task1 radio');
-let count = 0
+let container2 = document.querySelector(".container2");
+let adbtn = document.querySelector(".addBtn");
+let dlbtn = document.querySelector(".delBtn");
+let progress = document.querySelector("progress");
 
-// radios[0].checked =
+adbtn.addEventListener("click", () => {
+    console.log('working')
+  let div = document.createElement("div");
+  div.classList.add("container3");
+  container2.append(div);
 
-addbtn.addEventListener('click', () => {
-    document
+  let checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+  checkbox.classList.add("task1", "checkbox");
 
+  let text = document.createElement("input");
+  text.setAttribute("type", "text");
+  text.setAttribute("placeholder", "Add Task...");
+  text.classList.add("input");
+  text.setAttribute("title", "");
+  text.setAttribute("value", "");
 
-    container2.append((container3[0].cloneNode(true)))
-    bar[0].max = container3.length
-    max[0].innerHTML = bar[0].max
-    min[0].innerHTML = bar[0].value
-})
+  div.append(checkbox);
+  div.append(text);
+});
 
-delbtn.addEventListener('click', () => {
-    if (container3.length > 1) {
-        container2.lastElementChild.remove()
-        // bar.value = container3.length
-        bar[0].max = container3.length
-        max[0].innerHTML = bar[0].max
-        min[0].innerHTML = bar[0].value
-    }
-})
-
-bar[0].max = container3.length
-
-max[0].innerHTML = bar[0].max
-min[0].innerHTML = bar[0].value
-
-
-let b = true;
-
-for (let i = 0; i < container3.length; i++) {
-    radios[i].addEventListener('click', function () {
-        if (b == true) {
-            radios[i].checked = b
-            b = false
-            console.log(radios[i].checked)
-        }
-        else {
-            radios[i].checked = b
-            b = true
-            console.log(radios[i].checked)
-        }
-
-        if (radios[i].checked == true) {
-            bar[i].value = i + 1
-        }
-        else {
-            bar[i].value = i
-        }
-    })
-    console.log(container3.length)
-}
-
-// console.log(container2.lastElementChild)
-// console.log(container3.length)
-
+//    <!-- <div class="container3">
+//                 <input type="checkbox" class="task1 checkbox">
+//                 <input type="text" placeholder="Add Task..." class='input' title="" value=''>
+//             </div> -->
