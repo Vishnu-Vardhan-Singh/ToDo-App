@@ -4,19 +4,29 @@ let dlbtn = document.querySelector(".delBtn");
 let progress = document.querySelector("progress");
 let maxLength;
 let count = 0;
+
 function updatemax() {
   maxLength = container2.getElementsByClassName("container3");
   progress.max = maxLength.length;
 }
-function updatevalue(checkbox) {
+
+function updatevalue(checkbox,text) {
   checkbox.addEventListener("click", function () {
     if (checkbox.checked == true) {
       count = count + 1;
       progress.value = count;
+      text.style.textDecoration = 'line-through'
     } else {
       count = count - 1;
       progress.value = count;
+      text.style.textDecoration = 'none'
     }
+  });
+}
+
+function inputvalue(text) {
+  text.addEventListener("input", function (e) {
+    text.title = e.target.value;
   });
 }
 
@@ -33,14 +43,17 @@ adbtn.addEventListener("click", () => {
   text.setAttribute("type", "text");
   text.setAttribute("placeholder", "Add Task...");
   text.classList.add("input");
-  text.setAttribute("title", "");
+  text.setAttribute("title", text.placeholder);
   text.setAttribute("value", "");
+  
 
   div.append(checkbox);
   div.append(text);
 
   updatemax();
-  updatevalue(checkbox);
+  updatevalue(checkbox,text);
+  inputvalue(text);
+  
 });
 
 dlbtn.addEventListener("click", () => {
@@ -53,4 +66,3 @@ dlbtn.addEventListener("click", () => {
   }
   updatemax();
 });
-
