@@ -129,3 +129,6 @@ input::placeholder {
 .delBtn:active {
     transform: scale(0.9);
 }
+#status{
+    display: none;
+}
