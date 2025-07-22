@@ -29,7 +29,7 @@ body {
 }
 
 p {
-    font-size: 8px;
+    font-size: 10px;
     color: brown;
 }
 
@@ -88,19 +88,27 @@ input::placeholder {
     padding-inline: 10%;
     padding-block: 1%;
     margin-bottom: 2%;
-    gap:10px
+    gap: 10px
 }
 
 .addBtn,
 .delBtn {
     background-color: rgb(154, 202, 203);
-    height: 32px;
-    width: 32px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     position: relative;
     transform: scale(1);
     transition: width height transform 1ms;
+}
+
+.addBtn {
+    background-color: rgb(97, 255, 18);
+}
+
+.delBtn {
+    background-color: rgb(255, 58, 58);
 }
 
 .vertical,
@@ -125,10 +133,22 @@ input::placeholder {
 .delBtn:hover {
     cursor: pointer;
 }
+
 .addBtn:active,
 .delBtn:active {
     transform: scale(0.9);
 }
-#status{
+
+#status {
     display: none;
+}
+
+@media (max-width: 450px) {
+    .container2 {
+        width: 95%;
+    }
+
+    .addDel {
+        width: 95%;
+    }
 }

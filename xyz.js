@@ -1,1 +1,0 @@
-let arr = [ <input value="First">, <input value="Second"> ];
