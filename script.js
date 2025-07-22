@@ -142,6 +142,7 @@ function clickact(ckbox, txt) {
     ckbox.addEventListener("mouseover", () => {
         if (txt.value == "") {
             ckbox.disabled = true;
+            alert('Please enter your task before selecting the checkbox.')
         }
     })
 }
